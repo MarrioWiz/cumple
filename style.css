@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    background: linear-gradient(to top right, #ffccff, #ccffff);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3em;
+    color: #ff3399;
+    text-shadow: 2px 2px #fff;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .cake {
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+    height: 150px;
+    background: #ff9999;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .frosting {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    height: 30px;
+    background: #fff0f5;
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .candles {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .candle {
+    width: 10px;
+    height: 30px;
+    background: repeating-linear-gradient(
+      45deg,
+      #ffcc00,
+      #ffcc00 5px,
+      #ff0066 5px,
+      #ff0066 10px
+    );
+    position: relative;
+  }
+  
+  .flame {
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, yellow 0%, orange 70%, transparent 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: -12px;
+    left: 0;
+    animation: flicker 0.2s infinite;
+  }
+  
+  @keyframes flicker {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background: #66ffcc;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00cccc;
+  }
+  
+  button:hover {
+    background: #33ffcc;
+  }
+  
+  .confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .confetti span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: hsl(calc(360 * var(--i)), 100%, 50%);
+    animation: fall 3s linear infinite;
+  }
+  
+  @keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+  }
+  
